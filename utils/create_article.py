@@ -1,9 +1,9 @@
-from pathlib import Path
 import sys
 import os
-from django.conf import settings
 import django
 from datetime import datetime
+from pathlib import Path
+from django.conf import settings
 
 DJANGO_BASE_DIR = Path(__file__).parent.parent
 
