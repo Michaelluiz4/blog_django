@@ -5,7 +5,7 @@ from blog import models
 
 @admin.register(models.Post)
 class PostBlog(admin.ModelAdmin):
-    list_display = 'tittle',
+    list_display = 'tittle', 'date',
     ordering = '-id',
     search_fields = 'tittle',
     list_filter = 'date',
