@@ -1,0 +1,14 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+    <h1>Artigos</h1>
+    <ul>
+        {% for artigo in artigos %}
+            <li class="grid-container">
+                <h2 class="grid-item"> {{ artigo.title }}</h2>
+                <p class="grid-item"> {{ artigo.content }}</p> 
+                <small class="grid-item">Publicado em: {{ artigo.date }}</small>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

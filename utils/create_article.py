@@ -23,13 +23,13 @@ if __name__ == '__main__':
     django_article = []
 
     for _ in range(10):
-        tittle = fake.text(max_nb_chars=50)
+        title = fake.text(max_nb_chars=50)
         content = fake.text(max_nb_chars=500)
         date: datetime = fake.date_this_year()
 
         django_article.append(
             Post(
-                tittle=tittle,
+                title=title,
                 content=content,
                 date=date,
             )

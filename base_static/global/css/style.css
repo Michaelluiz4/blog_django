@@ -1,3 +1,45 @@
 body {
+    background-color: rgb(230, 230, 245);
+    font-size: 1.6rem;
+    font-family: sans-serif;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    font-size: 3rem;
+    background-color: rgb(210, 210, 255);
+    margin: 3%;
+    padding: 1%;
+    text-shadow: 0px 0px 2px black;
+}
+
+h2 {
+    text-align: left;
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.4rem;
     background-color: red;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.grid-item {
+    text-align: left;
+    padding: 10px;
 }
