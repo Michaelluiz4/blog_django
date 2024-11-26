@@ -6,14 +6,23 @@ from django.core.paginator import Paginator
 # Create your views here.
 
 def index(request):
-    return render(request, 'blog/index.html')
-
-
-def artigo(request):
-    artigos = Post.objects.all().order_by('-id')
 
     context = {
-        'artigos': artigos
+
+    }
+
+    return render(request, 'blog/index.html', context)
+
+
+def artigos(request):
+    artigos = Post.objects.all().order_by('-id')
+
+    paginator = Paginator(artigos, 1)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'page_obj': page_obj,
     }
 
     return render(request, 'blog/artigos.html', context)
@@ -21,4 +30,9 @@ def artigo(request):
 
 # criar uma views onde mostra os post individual
 def posts(request):
-    return render(request, 'blog/posts.html')
+
+    context = {
+
+    }
+
+    return render(request, 'blog/posts.html', context)
