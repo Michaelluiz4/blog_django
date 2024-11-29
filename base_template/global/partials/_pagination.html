@@ -1,3 +1,32 @@
+<div class="artigos">
+  {% for artigo in page_obj %}
+      <h2 class="titulo-artigo">{{ artigo.title }}</h2>
+      <p>{{ artigo.content }}</p>
+      <p class="data">{{ artigo.date }}</p>
+  {% endfor %}
+
+  <div class="paginas">
+      {% if page_obj.has_previous %}
+          <a class="opcao" href="?page={{ page_obj.previous_page_number }}">Voltar</a>
+      {% endif %}
+      Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+      {% if page_obj.has_next %}
+          <a class="opcao" href="?page={{ page_obj.next_page_number}}">Próxima</a>
+      {% endif %}
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% comment "" %}
 {% if page_obj %}
   <div class="pagination">
     <span class="step-links">
@@ -17,3 +46,4 @@
     </span>
   </div>
 {% endif %}
+{% endcomment %}
